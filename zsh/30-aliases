@@ -1,0 +1,8 @@
+alias ls='ls -G'
+alias k='kubectl'
+alias vanilla_tf='~/.gem/ruby/2.4.2/bin/tf'
+alias tffmt='terraform fmt -recursive'
+
+if [ -n $TMUX  ]; then
+    alias vim="TERM=screen-256color vim"
+fi

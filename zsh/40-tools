@@ -1,0 +1,12 @@
+# Source chtf
+if [[ -f /usr/local/share/chtf/chtf.sh  ]]; then
+  source "/usr/local/share/chtf/chtf.sh"
+fi
+
+# chtf used Terraform version
+chtf 0.12.12
+
+# Go stuff
+export GOPATH="${HOME}/.go"
+export GOROOT="$(brew --prefix golang)/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
