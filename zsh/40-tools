@@ -4,7 +4,7 @@ if [[ -f /usr/local/share/chtf/chtf.sh  ]]; then
 fi
 
 # chtf used Terraform version
-chtf 0.12.13
+chtf 0.12.17
 
 # Go stuff
 export GOPATH="${HOME}/.go"
