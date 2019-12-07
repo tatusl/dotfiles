@@ -10,3 +10,8 @@ chtf 0.12.13
 export GOPATH="${HOME}/.go"
 export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+
+# Hook direnv
+eval "$(direnv hook zsh)"
+# Make direnv more quiet
+export DIRENV_LOG_FORMAT=
