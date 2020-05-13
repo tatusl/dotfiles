@@ -1,5 +1,8 @@
+# Pick prompt elements
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir vcs terraform)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vi_mode aws direnv time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vi_mode aws kubecontext direnv time)
+
+# Configure prompt elements colors
 POWERLEVEL9K_AWS_BACKGROUND='blue'
 POWERLEVEL9K_AWS_FOREGROUND='black'
 POWERLEVEL9K_TIME_BACKGROUND='grey62'
