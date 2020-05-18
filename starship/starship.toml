@@ -1,0 +1,31 @@
+prompt_order = [
+    "directory",
+    "git_branch",
+    "git_commit",
+    "git_state",
+    "git_status",
+    "terraform",
+    "aws",
+    "kubernetes",
+    "line_break",
+    "character",
+]
+
+[kubernetes]
+symbol = ""
+style = "dimmed green"
+disabled = false
+
+[cmd_duration]
+disabled = true
+
+[aws]
+displayed_items = "profile"
+style = "blue"
+symbol = ""
+
+[terraform]
+symbol = ""
+
+[directory]
+truncate_to_repo = false
