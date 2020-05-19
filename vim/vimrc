@@ -1,0 +1,124 @@
+"Download vimplug if it not exists
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+"Specify a directory for plugins
+call plug#begin('~/.vimplug')
+
+"Define plugins which vim-plug loads
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'ervandew/supertab'
+Plug 'edkolev/tmuxline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-fugitive'
+Plug 'elzr/vim-json'
+Plug 'sheerun/vim-polyglot'
+Plug 'hashivim/vim-terraform'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-sleuth'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'rking/ag.vim'
+
+"Initialize plugin system
+call plug#end()
+
+"Map leader
+let mapleader = ","
+
+"Keymappings
+nnoremap <leader>a :FzfRg<CR>
+nnoremap <leader>A :FzfRg!<CR>
+nnoremap <leader>f <kDivide>
+nnoremap <leader>r :%s///g<left><left><left>
+nnoremap <leader>c :%s///gc<left><left><left><left>
+nnoremap <leader>o :FzfFiles<CR>
+nnoremap <leader>O :FzfFiles!<CR>
+
+nnoremap <C-p> :FzfFiles<Cr>
+
+nnoremap <Leader><space> :noh<cr>
+
+"Initial settings
+syntax on
+filetype plugin indent on
+set rnu
+
+"Shows the match while typing
+set incsearch
+" Highlight found searches
+set hlsearch
+" Search case insensitive...
+set ignorecase
+" ... but not when search pattern contains upper case characters
+set smartcase
+
+"Break the habit of using arrow keys for movement
+noremap <up> <nop>
+noremap <down> <nop>
+noremap <left> <nop>
+noremap <right> <nop>
+
+"Set solarized colorscheme
+syntax enable
+set background=dark
+colorscheme solarized
+
+"vim-airline
+set laststatus=2
+let g:airline_theme='solarized'
+
+"Temporary fix
+let g:airline_section_x = ''
+
+"Detect filechanges
+:set autoread
+
+"Prefix fzf commands with "Fzf"
+let g:fzf_command_prefix = 'Fzf'
+
+"Do not use swap or backup file
+set noswapfile
+set nobackup
+set nowritebackup
+
+"Indentation
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+
+"Better split switching
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+"Open new splits to the bottom and right
+set splitbelow
+set splitright
+
+"Use system clipboard:
+set clipboard=unnamed
+
+"Toggle Nerdtree
+map <C-n> :NERDTreeToggle<CR>
+
+"Rendering
+set ttyfast
+
+"Automatic resize
+:autocmd VimResized * wincmd =
+
+"Always start searching from project root instead of the cwd
+let g:ag_working_path_mode="r"
+
+"Disable intro message
+set shortmess=I
+
+"Disable bells
+set belloff=all
