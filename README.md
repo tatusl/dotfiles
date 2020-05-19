@@ -1,5 +1,16 @@
-# dotfiles
-My dotfiles
+# Dotfiles
+
+🏠 of my dotfiles
+
+## Usage
+
+### Installation
+
+`make`
+
+### Clean (uninstall)
+
+`make clean`
 
 ## Terminal fonts and colors
 
