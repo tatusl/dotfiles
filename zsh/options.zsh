@@ -10,11 +10,19 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=10000
 
+# Appends every command to the history file once it is executed
+setopt inc_append_history
+# Reloads the history whenever you use it
+setopt share_history
+
+# Do not store space prefixed commands to history
+setopt hist_ignore_space
+
 # Timeout between normal and insert vi modes (in tenth-of-seconds)
 export KEYTIMEOUT=1
 
 # Change directories without typing "cd"
-setopt AUTOCD
+setopt autocd
 
 # Autocomplete special-dirs ("." and "..")
 zstyle ':completion:*' special-dirs true
