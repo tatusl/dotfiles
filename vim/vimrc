@@ -41,6 +41,7 @@ nnoremap <leader>r :%s///g<left><left><left>
 nnoremap <leader>c :%s///gc<left><left><left><left>
 nnoremap <leader>o :FzfFiles<CR>
 nnoremap <leader>O :FzfFiles!<CR>
+nnoremap <leader>s :setlocal spell! spelllang=en_gb<CR>
 
 nnoremap <C-p> :FzfFiles<Cr>
 
@@ -122,3 +123,6 @@ set shortmess=I
 
 "Disable bells
 set belloff=all
+
+"Spell-check Git Commit Messages
+autocmd FileType gitcommit setlocal spell
