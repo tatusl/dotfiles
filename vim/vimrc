@@ -26,6 +26,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-sleuth'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'rking/ag.vim'
+Plug 'shime/vim-livedown'
+Plug '907th/vim-auto-save'
 
 "Initialize plugin system
 call plug#end()
@@ -41,7 +43,9 @@ nnoremap <leader>r :%s///g<left><left><left>
 nnoremap <leader>c :%s///gc<left><left><left><left>
 nnoremap <leader>o :FzfFiles<CR>
 nnoremap <leader>O :FzfFiles!<CR>
-nnoremap <leader>s :setlocal spell! spelllang=en_gb<CR>
+nnoremap <silent> <leader>s :setlocal spell! spelllang=en_us<CR>
+nnoremap <silent> <leader>l :LivedownToggle<CR>
+nnoremap <leader>t :TerraformFmt<CR>
 
 nnoremap <C-p> :FzfFiles<Cr>
 
@@ -76,9 +80,6 @@ colorscheme solarized
 set laststatus=2
 let g:airline_theme='solarized'
 
-"Temporary fix
-let g:airline_section_x = ''
-
 "Detect filechanges
 :set autoread
 
@@ -92,6 +93,7 @@ set nowritebackup
 
 "Indentation
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+set autoindent
 
 "Better split switching
 map <C-j> <C-W>j
@@ -126,3 +128,11 @@ set belloff=all
 
 "Spell-check Git Commit Messages
 autocmd FileType gitcommit setlocal spell
+
+let g:auto_save = 0
+augroup ft_markdown
+  au!
+  au FileType markdown let b:auto_save = 1
+augroup END
+
+let g:auto_save_silent = 1  " do not display the auto-save notification
