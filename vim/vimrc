@@ -12,7 +12,6 @@ call plug#begin('~/.vimplug')
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'ervandew/supertab'
 Plug 'edkolev/tmuxline.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -28,9 +27,29 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'rking/ag.vim'
 Plug 'shime/vim-livedown'
 Plug '907th/vim-auto-save'
+Plug 'yggdroot/indentLine'
+
+" Plugins for React/JS development
+Plug 'pangloss/vim-javascript'
+Plug 'peitalin/vim-jsx-typescript'
+
+" coc.nvim plugin and its plugins
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+let g:coc_global_extensions = [
+  \ 'coc-tsserver',
+  \ 'coc-json',
+  \ 'coc-eslint',
+  \ 'coc-prettier',
+  \ 'coc-yaml'
+  \ ]
 
 "Initialize plugin system
 call plug#end()
+
+"Prettier command
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+let g:indentLine_char = '|'
 
 "Map leader
 let mapleader = ","
@@ -46,6 +65,10 @@ nnoremap <leader>O :FzfFiles!<CR>
 nnoremap <silent> <leader>s :setlocal spell! spelllang=en_us<CR>
 nnoremap <silent> <leader>l :LivedownToggle<CR>
 nnoremap <leader>t :TerraformFmt<CR>
+nnoremap <leader>p :Prettier<CR>
+
+"Trim whitespace
+nnoremap <leader>c :%s/\s\+$//<CR>
 
 nnoremap <C-p> :FzfFiles<Cr>
 
