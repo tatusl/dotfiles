@@ -27,6 +27,12 @@ alias gcb='git checkout -b'
 alias gp='git push'
 alias gb='git branch'
 
+# Interactive fuzzy-searching git branch selector with fzf
+alias gcof='git for-each-ref refs/heads/ --sort=-committerdate --format=\''%\(refname:short\)\'' | fzf | xargs git checkout'
+
+# Interactive YubiKey TOTP token selector
+alias ykmfa='ykman oath code -s $(ykman oath list | fzf) | tr -cd "[:alnum:]" |pbcopy'
+
 # Colour hack for vim and tmux
 if [ -n $TMUX  ]; then
     alias vim="TERM=screen-256color vim"
