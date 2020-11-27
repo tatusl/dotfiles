@@ -12,8 +12,9 @@ export SAVEHIST=10000
 
 # Appends every command to the history file once it is executed
 setopt inc_append_history
-# Reloads the history whenever you use it
-setopt share_history
+
+# Do not show duplicates
+setopt HIST_FIND_NO_DUPS
 
 # Do not store space prefixed commands to history
 setopt hist_ignore_space
@@ -23,6 +24,9 @@ export KEYTIMEOUT=1
 
 # Change directories without typing "cd"
 setopt autocd
+
+# Extended glob syntax
+setopt extended_glob
 
 # Autocomplete special-dirs ("." and "..")
 zstyle ':completion:*' special-dirs true
