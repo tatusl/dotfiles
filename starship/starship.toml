@@ -1,17 +1,18 @@
-prompt_order = [
-    "directory",
-    "git_branch",
-    "git_commit",
-    "git_state",
-    "git_status",
-    "terraform",
-    "aws",
-    "kubernetes",
-    "line_break",
-    "character",
-]
+format = """\
+    $directory\
+    $git_branch\
+    $git_commit\
+    $git_state\
+    $git_status\
+    $terraform\
+    $aws\
+    $kubernetes\
+    $line_break\
+    $character\
+"""
 
 [kubernetes]
+format = '[$symbol$context( \($namespace\) )]($style)'
 symbol = ""
 style = "dimmed green"
 disabled = false
