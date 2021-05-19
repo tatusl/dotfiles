@@ -21,7 +21,7 @@ disabled = false
 disabled = true
 
 [aws]
-displayed_items = "profile"
+format = 'on [$symbol($profile )(\($region\) )(\[$duration\])]($style)'
 style = "blue"
 symbol = ""
 
