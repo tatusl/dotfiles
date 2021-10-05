@@ -31,7 +31,7 @@ alias gb='git branch'
 alias gcof='git for-each-ref refs/heads/ --sort=-committerdate --format=\''%\(refname:short\)\'' | fzf | xargs git checkout'
 
 # Interactive YubiKey TOTP token selector
-alias ykmfa='ykman oath code -s $(ykman oath list | fzf) | tr -cd "[:alnum:]" |pbcopy'
+alias ykmfa='ykman oath accounts code -s $(ykman oath list | fzf) | tr -cd "[:alnum:]" |pbcopy'
 
 # Colour hack for vim and tmux
 if [ -n $TMUX  ]; then
