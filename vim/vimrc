@@ -28,6 +28,7 @@ Plug 'rking/ag.vim'
 Plug 'shime/vim-livedown'
 Plug '907th/vim-auto-save'
 Plug 'yggdroot/indentLine'
+Plug 'junegunn/goyo.vim'
 
 " Plugins for React/JS development
 Plug 'pangloss/vim-javascript'
