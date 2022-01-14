@@ -2,6 +2,9 @@
 alias ls='ls -G'
 alias v='vim'
 
+# Use nvim
+alias nvim='vim'
+
 # Kubernetes
 alias k='kubectl'
 alias kctx='kubectx'
