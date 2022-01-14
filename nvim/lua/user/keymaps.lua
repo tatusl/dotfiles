@@ -43,7 +43,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<Leader><Space>", ":noh<CR>", opts)
 
 -- Native forward search
-keymap("n", "<Leader>f", "<kDivide>", { noremap = true })
+--keymap("n", "<Leader>f", "<kDivide>", { noremap = true })
 
 -- Trim whitespace
 keymap("n", "<Leader>w", ":%s/\\s\\+$//<CR>", opts)
@@ -80,3 +80,6 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
+--keymap("n", "<c-p>", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<c-p>", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
