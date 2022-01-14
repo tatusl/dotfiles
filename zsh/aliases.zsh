@@ -36,7 +36,7 @@ alias ykmfa='ykman oath accounts code -s $(ykman oath list | fzf) | tr -cd "[:al
 
 # Colour hack for vim and tmux
 if [ -n $TMUX  ]; then
-    alias vim="TERM=screen-256color vim"
+    alias vim="TERM=screen-256color nvim"
 fi
 
 alias awsp='export AWS_PROFILE=$(sed -n "s/\[profile \(.*\)\]/\1/gp" ${AWS_CONFIG_FILE} | fzf)'
