@@ -3,7 +3,7 @@ alias ls='ls -G'
 alias v='vim'
 
 # Use nvim
-alias nvim='vim'
+alias vim='nvim'
 
 # Kubernetes
 alias k='kubectl'
