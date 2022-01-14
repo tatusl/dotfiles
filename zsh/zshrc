@@ -1,7 +1,15 @@
 CONFDIR="$HOME/.dotfiles/zsh"
+PRIV_CONFDIR="$HOME/.priv_dotfiles"
 
 for file in "$CONFDIR"/*.zsh; do
     source "$file"
 done
+
+if [ -d "$PRIV_CONFDIR" ]
+then
+    for file in "$PRIV_CONFDIR"/*.zsh; do
+        source "$file"
+    done
+fi
 
 eval "$(starship init zsh)"
