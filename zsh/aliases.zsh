@@ -37,3 +37,5 @@ alias ykmfa='ykman oath accounts code -s $(ykman oath list | fzf) | tr -cd "[:al
 if [ -n $TMUX  ]; then
     alias vim="TERM=screen-256color vim"
 fi
+
+alias awsp='export AWS_PROFILE=$(sed -n "s/\[profile \(.*\)\]/\1/gp" ${AWS_CONFIG_FILE} | fzf)'
