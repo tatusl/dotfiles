@@ -163,6 +163,8 @@ set shortmess=I
 "Disable bells
 set belloff=all
 
+set updatetime=300
+
 "Spell-check Git Commit Messages
 autocmd FileType gitcommit setlocal spell
 
