@@ -1,6 +1,6 @@
 export SHELL=$(which zsh)
 export GPG_TTY=$(tty)
-export EDITOR='vim'
+export EDITOR='nvim'
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export PATH=$PATH:~/bin
@@ -17,7 +17,7 @@ setopt inc_append_history
 setopt HIST_FIND_NO_DUPS
 
 # Do not store space prefixed commands to history
-setopt hist_ignore_space
+setopt histignorespace
 
 # Timeout between normal and insert vi modes (in tenth-of-seconds)
 export KEYTIMEOUT=1
