@@ -26,6 +26,7 @@ alias gco='git checkout'
 alias gcb='git checkout -b'
 alias gp='git push'
 alias gb='git branch'
+alias gd='git diff'
 
 # Interactive fuzzy-searching git branch selector with fzf
 alias gcof='git for-each-ref refs/heads/ --sort=-committerdate --format=\''%\(refname:short\)\'' | fzf | xargs git checkout'
@@ -39,3 +40,7 @@ if [ -n $TMUX  ]; then
 fi
 
 alias awsp='export AWS_PROFILE=$(sed -n "s/\[profile \(.*\)\]/\1/gp" ${AWS_CONFIG_FILE} | fzf)'
+alias avefzf='aws-vault exec $(sed -n "s/\[profile \(.*\)\]/\1/gp" ${AWS_CONFIG_FILE} | fzf)'
+
+# Clear clipboard
+alias pbclear='pbcopy < /dev/null'
