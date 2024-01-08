@@ -46,6 +46,16 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "overcache/NeoSolarized" -- Solarized color theme
   use "alexghergh/nvim-tmux-navigation" -- tmux+vim navigation integration
+
+  -- install without yarn or npm
+  --[[ use({ ]]
+  --[[     "iamcco/markdown-preview.nvim", ]]
+  --[[     run = function() vim.fn["mkdp#util#install"]() end, ]]
+  --[[ }) ]]
+
+
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -64,7 +74,9 @@ return packer.startup(function(use)
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use "williamboman/mason.nvim" -- simple to use language server installer
+  use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
+
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"

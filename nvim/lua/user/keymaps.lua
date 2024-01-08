@@ -57,6 +57,9 @@ keymap("n", "<Leader>c", ":%s///gc<left><left><left><left>", { noremap = true })
 -- Toggle spelling
 keymap("n", "<Leader>s", ":setlocal spell! spelllang=en_us<CR>", opts)
 
+-- Format
+keymap("n", "<Leader>ff", ":Format<CR>", opts)
+
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)

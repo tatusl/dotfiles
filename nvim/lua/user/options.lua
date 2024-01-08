@@ -26,7 +26,7 @@ local options = {
   relativenumber = true,                   -- set relative numbered lines
   numberwidth = 2,                         -- set number column width to 2 {default 4}
   signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
-  wrap = false,                            -- display lines as one long line
+  wrap = true,                            -- display lines as one long line
   scrolloff = 8,                           -- number of context lines you would like to see above and below the cursor.
   sidescrolloff = 8,                       -- same but for side scrolling
   shortmess = 'I'                          -- disable intro message
@@ -34,6 +34,8 @@ local options = {
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"       -- move to the previous/next line after reaching first/last character in the line
 vim.cmd [[set iskeyword+=-]]               -- treat words separated by hyphen or underscore as one word
+
+vim.g.better_whitespace_enabled = 1
 
 for k, v in pairs(options) do
   vim.opt[k] = v

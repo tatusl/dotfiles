@@ -1,7 +1,15 @@
-local status_ok, _ = pcall(require, "lspconfig")
-if not status_ok then
-	return
-end
-
-require("user.lsp.lsp_installer")
-require("user.lsp.handlers").setup()
+require("mason").setup()
+mason_lspconfig = require("mason-lspconfig")
+mason_lspconfig.setup({
+  ensure_installed = {
+    "terraformls",
+    "jedi_language_server"
+  }
+})
+mason_lspconfig.setup_handlers({
+  function (server_name)
+    require("lspconfig")[server_name].setup {
+      on_attach = require("user.lsp.shared").on_attach,
+    }
+  end
+})
