@@ -9,6 +9,7 @@ install:
 	[ -f ~/.tmuxline.conf ] || ln -s $(PWD)/tmux/tmuxline.conf ~/.tmuxline.conf
 	[ -f ~/.vimrc ] || ln -s $(PWD)/vim/vimrc ~/.vimrc
 	[ -f ~/.vim/coc-settings.json ] || ln -s $(PWD)/vim/coc-settings.json ~/.vim/coc-settings.json
+	[ -d ~/.config/nvim ] || ln -s $(PWD)/nvim ~/.config/nvim
 
 	# don't show last login message
 	touch ~/.hushlogin
