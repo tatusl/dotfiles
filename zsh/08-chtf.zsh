@@ -1,6 +1,9 @@
-# Source chtf
-if [[ -f /usr/local/share/chtf/chtf.sh  ]]; then
-  source "/usr/local/share/chtf/chtf.sh"
-fi
+######################################################################
+# chtf
 
-chtf 1.9.5
+# Uncomment and change the value to override the default:
+#CHTF_AUTO_INSTALL="ask" # yes/no/ask
+
+if [[ -f "$(brew --prefix)/share/chtf/chtf.sh" ]]; then
+	source "$(brew --prefix)/share/chtf/chtf.sh"
+fi
