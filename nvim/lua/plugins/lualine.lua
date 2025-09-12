@@ -2,7 +2,7 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     opts = {
-      theme = "solarized_dark",
+      theme = "NeoSolarized",
       sections = {
         lualine_z = {},
       },
