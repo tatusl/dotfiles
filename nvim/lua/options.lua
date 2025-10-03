@@ -1,7 +1,5 @@
--- Options are automatically loaded before lazy.nvim startup
--- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
--- Add any additional options here
---
+vim.g.mapleader = " "
+
 local options = {
   backup = false, -- disable backup file
   swapfile = false, -- disable swapfile
@@ -34,6 +32,7 @@ local options = {
   scrolloff = 8, -- number of context lines you would like to see above and below the cursor.
   sidescrolloff = 8, -- same but for side scrolling
   shortmess = "I", -- disable intro message
+  laststatus = 3, -- Global statusline
 }
 
 vim.cmd("set whichwrap+=<,>,[,],h,l") -- move to the previous/next line after reaching first/last character in the line
@@ -42,3 +41,9 @@ vim.cmd([[set iskeyword+=-]]) -- treat words separated by hyphen or underscore a
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+-- add binaries installed by mason.nvim to path
+local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
+vim.env.PATH = vim.env.PATH .. (is_windows and ";" or ":") .. vim.fn.stdpath "data" .. "/mason/bin"
+
+vim.api.nvim_set_hl(0, "IndentLine", { link = "Comment" })
