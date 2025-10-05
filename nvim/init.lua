@@ -1,3 +1,5 @@
+-- luacheck: globals vim
+
 require "options"
 require "mappings"
 require "commands"

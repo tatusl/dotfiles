@@ -3,7 +3,8 @@ vim.g.mapleader = " "
 local options = {
   backup = false, -- disable backup file
   swapfile = false, -- disable swapfile
-  writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
+  writebackup = false, -- if a file is being edited by another program
+                       -- (or was written to file while editing with another program), it is not allowed to be edited
   autoread = true, -- detect filechanges
   clipboard = "unnamedplus", -- allows neovim to access the system clipboard
   cmdheight = 1, -- more space in the neovim command line for displaying messages
@@ -35,8 +36,8 @@ local options = {
   laststatus = 3, -- Global statusline
 }
 
-vim.cmd("set whichwrap+=<,>,[,],h,l") -- move to the previous/next line after reaching first/last character in the line
-vim.cmd([[set iskeyword+=-]]) -- treat words separated by hyphen or underscore as one word
+vim.cmd "set whichwrap+=<,>,[,],h,l" -- move to the previous/next line after reaching first/last character in the line
+vim.cmd [[set iskeyword+=-]] -- treat words separated by hyphen or underscore as one word
 
 for k, v in pairs(options) do
   vim.opt[k] = v
