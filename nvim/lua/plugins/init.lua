@@ -1,14 +1,15 @@
 return {
-  { lazy = true, "nvim-lua/plenary.nvim" },
+  { lazy = true, "nvim-lua/plenary.nvim", version = "*" },
 
-  { "nvim-tree/nvim-web-devicons", opts = {} },
-  { "echasnovski/mini.statusline", opts = {} },
-  { "lewis6991/gitsigns.nvim", opts = {} },
+  { "nvim-tree/nvim-web-devicons", opts = {}, version = "*" },
+  { "echasnovski/mini.statusline", opts = {}, version = "*" },
+  { "lewis6991/gitsigns.nvim", opts = {}, version = "*" },
 
   {
     "nvim-tree/nvim-tree.lua",
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
     opts = {},
+    version = "*",
   },
 
   {
@@ -17,6 +18,7 @@ return {
     config = function()
       require "plugins.configs.treesitter"
     end,
+    version = "*",
   },
 
   {
@@ -31,6 +33,7 @@ return {
         },
       }
     end,
+    version = "*",
   },
 
   -- we use blink plugin only when in insert mode
@@ -45,13 +48,14 @@ return {
       -- snippets engine
       {
         "L3MON4D3/LuaSnip",
+        version = "*",
         config = function()
           require("luasnip.loaders.from_vscode").lazy_load()
         end,
       },
 
       -- autopairs , autocompletes ()[] etc
-      { "windwp/nvim-autopairs", opts = {} },
+      { "windwp/nvim-autopairs", opts = {}, version = "*" },
     },
     -- made opts a function cuz cmp config calls cmp module
     -- and we lazyloaded cmp so we dont want that file to be read on startup!
@@ -65,10 +69,12 @@ return {
     build = ":MasonUpdate",
     cmd = { "Mason", "MasonInstall" },
     opts = {},
+    version = "*",
   },
 
   {
     "neovim/nvim-lspconfig",
+    version = "*",
     config = function()
       require "plugins.configs.lspconfig"
     end,
@@ -77,12 +83,14 @@ return {
   {
     "stevearc/conform.nvim",
     opts = require "plugins.configs.conform",
+    version = "*",
   },
 
   {
     "nvimdev/indentmini.nvim",
     event = { "BufReadPre", "BufNewFile" },
     opts = {},
+    version = "*",
   },
 
   -- files finder etc
@@ -90,10 +98,12 @@ return {
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
     opts = require "plugins.configs.telescope",
+    version = "*",
   },
 
   {
     "alexghergh/nvim-tmux-navigation",
+    version = "*",
     config = function()
       require("nvim-tmux-navigation").setup {
         disable_when_zoomed = true, -- defaults to false
@@ -111,6 +121,7 @@ return {
 
   {
     "Tsuzat/NeoSolarized.nvim",
+    version = "*",
     lazy = false, -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
