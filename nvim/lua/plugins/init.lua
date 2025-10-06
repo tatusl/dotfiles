@@ -2,7 +2,6 @@ return {
   { lazy = true, "nvim-lua/plenary.nvim", version = "*" },
 
   { "nvim-tree/nvim-web-devicons", opts = {}, version = "*" },
-  { "echasnovski/mini.statusline", opts = {}, version = "*" },
   { "lewis6991/gitsigns.nvim", opts = {}, version = "*" },
 
   {
