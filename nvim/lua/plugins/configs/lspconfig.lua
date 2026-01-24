@@ -40,5 +40,6 @@ capabilities.textDocument.completion.completionItem = {
 
 vim.lsp.config("*", { capabilities = capabilities })
 local servers = { "html", "cssls", "lua_ls", "ts_ls" }
+local servers = { "html", "cssls" , "lua_ls", "ts_ls", "terraformls", "docker_compose_language_service" }
 
 vim.lsp.enable(servers)
