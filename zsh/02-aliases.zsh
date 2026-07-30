@@ -37,11 +37,6 @@ alias gcof='git for-each-ref refs/heads/ --sort=-committerdate --format=\''%\(re
 # Interactive YubiKey TOTP token selector
 alias ykmfa='ykman oath accounts code -s $(ykman oath list | fzf) | tr -cd "[:alnum:]" |pbcopy'
 
-# Colour hack for vim and tmux
-if [ -n $TMUX  ]; then
-    alias vim="TERM=screen-256color nvim"
-fi
-
 alias awsp='export AWS_PROFILE=$(sed -n "s/\[profile \(.*\)\]/\1/gp" ${AWS_CONFIG_FILE} | fzf)'
 alias avefzf='aws-vault exec $(sed -n "s/\[profile \(.*\)\]/\1/gp" ${AWS_CONFIG_FILE} | fzf)'
 
