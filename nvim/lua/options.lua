@@ -43,8 +43,17 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
+vim.opt.guicursor = "n-v-c:ver25-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor20-Cursor"
+
 -- add binaries installed by mason.nvim to path
 local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
 vim.env.PATH = vim.env.PATH .. (is_windows and ";" or ":") .. vim.fn.stdpath "data" .. "/mason/bin"
 
 vim.api.nvim_set_hl(0, "IndentLine", { link = "Comment" })
+
+-- Auto-reload buffers when modified externally
+local autoreload_group = vim.api.nvim_create_augroup("AutoReload", { clear = true })
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+  group = autoreload_group,
+  command = "checktime",
+})

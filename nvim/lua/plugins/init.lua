@@ -1,7 +1,7 @@
 return {
-  { lazy = true, "nvim-lua/plenary.nvim", version = "*" },
+  { lazy = true, "nvim-lua/plenary.nvim" },
 
-  { "nvim-tree/nvim-web-devicons", opts = {}, version = "*" },
+  { "nvim-tree/nvim-web-devicons", opts = {} },
   { "lewis6991/gitsigns.nvim", opts = {}, version = "*" },
 
   {
@@ -13,11 +13,12 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+    lazy = false,
     build = ":TSUpdate",
     config = function()
       require "plugins.configs.treesitter"
     end,
-    version = "*",
   },
 
   {
@@ -125,6 +126,10 @@ return {
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
       vim.cmd.colorscheme "NeoSolarized"
+      -- Make visual selection more visible
+      vim.api.nvim_set_hl(0, "Visual", { bg = "#268bd2", fg = "#002b36" })
+      -- Make cursor show the character underneath
+      vim.api.nvim_set_hl(0, "Cursor", { bg = "#839496", fg = "#002b36" })
     end,
   },
 }
